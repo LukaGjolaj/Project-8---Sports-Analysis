@@ -29,4 +29,8 @@ Part 4:
 3.  Someone to help with presentation slides: All of us can partially chip in 
 
 Short-term goals:
-1.  
+1.  Got the dataset
+2.  Organizing the dataset
+3.  Being able to meet next Saturday to get started on this
+4.  Points per possesion, points per shot, effective FG%
+5.  Linear regression model: Points per shot/PPP against win rate %
