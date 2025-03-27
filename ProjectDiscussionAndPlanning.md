@@ -4,7 +4,7 @@
 4. Luka:
 5. Nathan Czopp: 
 6. Eric Grenadier: 
-7. Sahat Khan: 
+7. Sahat Khan: Visualizing the data: Shot Charts, Heat Maps, Time-Series of Shot Selection, Player vs. Team Shot Distribution Comparison, Defender Proximity Charts, Expected Shot Value vs. Actual Shot Value, etc
 8. Kevin Pham: Writing the plan, pushing all the changes, making sure everything works well.
 9. Third bullet point: Finish what's needed by the deadline (preferably the by the night before or earlier)
 10. First group meeting: Weekend or Thursdays afternoon(?)
