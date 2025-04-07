@@ -4,7 +4,7 @@
 4. Luka:
 5. Nathan Czopp: 
 6. Eric Grenadier: 
-7. Sahat Khan: 
+7. Sahat Khan: Visualizing the data: Shot Charts, Heat Maps, Time-Series of Shot Selection, Player vs. Team Shot Distribution Comparison, Defender Proximity Charts, Expected Shot Value vs. Actual Shot Value, etc
 8. Kevin Pham: Writing the plan, pushing all the changes, making sure everything works well.
 9. Third bullet point: Finish what's needed by the deadline (preferably the by the night before or earlier)
 10. First group meeting: Weekend or Thursdays afternoon(?)
@@ -29,4 +29,8 @@ Part 4:
 3.  Someone to help with presentation slides: All of us can partially chip in 
 
 Short-term goals:
-1.  
+1.  Got the dataset
+2.  Organizing the dataset
+3.  Being able to meet next Saturday to get started on this
+4.  Points per possesion, points per shot, effective FG%
+5.  Linear regression model: Points per shot/PPP against win rate %
