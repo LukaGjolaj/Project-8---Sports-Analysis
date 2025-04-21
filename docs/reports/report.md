@@ -1,7 +1,9 @@
 # CMSE 202 Final Project Report: Identifying Key Drivers of NBA Team Wins
 
 **Group Members:** Luka Gjolaj, Kevin Pham, Eric Grenadier, Sahat, Nate
+
 **Course:** CMSE 202 Section 4
+
 **Date:** April 21, 2025
 
 ## 1. Introduction: The Quest for Winning
@@ -47,7 +49,8 @@ The National Basketball Association (NBA) is driven by competition, with teams c
 
 The analysis provided valuable insights but also faced challenges. The pronounced **multicollinearity** among shooting efficiency metrics, clearly shown in Figure 2, makes isolating the unique contribution of each specific metric difficult, even for Random Forest feature importance. This might also explain the lack of significant predictors for ORTG in the `statsmodels` OLS regression, where standard errors can be inflated by collinear features.
 
-A notable finding was the **counter-intuitive positive relationship between DRTG (lower is better) and Wins** identified by both RF/SHAP and the significant OLS coefficient. While statistically present in this model configuration and dataset, it contradicts general basketball principles. This could stem from complex interactions not fully captured, the specific subset of features used, confounding variables not included in the model, or specific trends within the 2021-2025 seasons included. It warrants caution in interpretation and suggests further investigation is needed.
+A notable finding was the **counter-intuitive positive relationship between DRTG (lower is better) and Wins** identified by both RF/SHAP and the significant OLS coefficient. While statistically present in this model configuration and dataset, it contradicts general basketball principles. The reason for this is that DRTG is measured as points allowed per 100 possessions. A better team allows more points, so a lower DRTG is better. 
+Without knowing what the data actually represents, this might be confusing, but given this information it makes sense. A way to make this more intuitive could be scaling the ratings from 0-100 where 0 is the max DRTG and 100 is the min. This would make the relationship more intuitive, but wouldn't change the model at all.
 
 Data limitations included the **reliance on name-matching** for player measurements, which could introduce noise, and the **four-season timeframe**, limiting the ability to analyze longer-term trends. Finally, it's crucial to remember that these models demonstrate **correlation and predictive importance, not causation**.
 
