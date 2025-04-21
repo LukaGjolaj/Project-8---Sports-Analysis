@@ -1,7 +1,7 @@
 # CMSE 202 Final Project Report: Identifying Key Drivers of NBA Team Wins
 
-**Group Members:** [Your Group Member Names]
-**Course:** CMSE 202 Section [Your Section Number]
+**Group Members:** Luka Gjolaj, Kevin Pham, Eric Grenadier, Sahat, Nate
+**Course:** CMSE 202 Section 4
 **Date:** April 21, 2025
 
 ## 1. Introduction: The Quest for Winning
