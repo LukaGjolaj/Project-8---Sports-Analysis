@@ -1,0 +1,35 @@
+CMSE 202 Final Project Report: Identifying Key Drivers of NBA Team Wins
+
+Group Members: [Your Group Member Names]
+Course: CMSE 202 Section [Your Section Number]
+Date: April 21, 2025
+
+1. Introduction: The Quest for Winning
+
+The National Basketball Association (NBA) is driven by competition, with teams constantly seeking an edge to maximize victories. Understanding the statistical factors that contribute most significantly to winning is crucial for team building, strategy development, and fan engagement. This project addresses the research question: What key team performance metrics can an NBA team focus on to maximize their chance to win the most games? We utilized publicly available data accessed via the nba_api Python package, focusing on team-level statistics from the 2021-22 season through the 2024-25 season. Our analysis aims to identify the most impactful statistical drivers of both overall team wins and offensive efficiency (Offensive Rating - ORTG).
+
+2. Methods: Modeling Team Performance
+
+Data Collection & Preparation: Team statistics (including basic percentages, advanced ratings like ORTG and DRTG, turnover percentage, and attempt counts) and player minutes were collected for four NBA seasons (2021-2025). Player measurement data (height, wingspan) was obtained separately and used to calculate minutes-weighted average height and wingspan for each team per season. Challenges included merging player measurement data based on names, which can be inconsistent. Missing numerical values in the final combined dataset were imputed using the median value for each respective column.
+Feature Selection & Modeling: Recognizing high multicollinearity among shooting efficiency metrics (e.g., TS%, eFG%, FG%) revealed by an initial correlation analysis, we selected a primary efficiency metric (TS_Percent) along with ORTG, DRTG, TOV_Percent, Team_3s_Attempted, and the weighted physical measurements (Weighted_Avg_Height, Weighted_Avg_Wingspan) as primary features for modeling.
+Computational Techniques: We employed and compared two regression techniques from scikit-learn to predict Wins and ORTG:
+Linear Regression: A standard baseline model to assess linear relationships. Features were standardized using StandardScaler before training. We also utilized statsmodels OLS regression to obtain statistical inference metrics like p-values.
+Random Forest Regression: An ensemble tree-based method chosen for its robustness, ability to capture non-linearities, and built-in feature importance measures.
+Interpretation & Evaluation: Model performance was compared using R-squared (R²), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE) on a 25% test split. Feature importance was assessed using the Random Forest's internal importance scores and more deeply investigated using SHAP (SHapley Additive exPlanations) values generated via the shap library, which explain the magnitude and direction of each feature's contribution to model predictions. Key Python libraries included pandas, numpy, scikit-learn, statsmodels, shap, matplotlib, and seaborn.
+3. Results: Key Statistical Drivers
+
+Model Performance: Comparing the models, Linear Regression achieved a slightly higher R² (0.90 vs. 0.87) and lower error metrics (MAE: 2.61 vs 3.18, RMSE: 3.41 vs 3.90) when predicting Wins. However, Random Forest performed better when predicting ORTG (R²: 0.70 vs. 0.65; RMSE: 1.58 vs 1.70). This suggests linear relationships strongly explain Wins when key ratings are included, but predicting ORTG itself benefits from the non-linearities captured by Random Forest. (Consider inserting the model performance comparison table/plot here).
+Drivers of Wins (RF/SHAP): The Random Forest model, interpreted via SHAP, identified the most important drivers for Wins as: ORTG (positive impact), DRTG (positive impact - see discussion), TS_Percent (positive impact), TOV_Percent (negative impact), and Weighted_Avg_Height (negative impact). The linear regression analysis (via statsmodels) confirmed ORTG and DRTG as having statistically significant coefficients (p < 0.05).
+Drivers of ORTG (RF/SHAP): For predicting ORTG, the key drivers identified were TS_Percent (positive impact), TOV_Percent (negative impact), and Weighted_Avg_Height (negative impact). Interestingly, the statsmodels linear regression found no predictors with p-values below 0.05 for ORTG with this feature set, potentially due to multicollinearity affecting standard errors or weaker linear relationships. (Consider inserting a key SHAP plot, e.g., beeswarm for ORTG, here).
+Observed Correlations: The correlation analysis highlighted strong positive relationships between various efficiency metrics (TS%, eFG%, FG%) and ORTG/Wins. It also confirmed multicollinearity between these shooting percentages and between weighted height and wingspan.
+4. Discussion & Difficulties
+
+The analysis yielded several insights but also highlighted challenges. The strong multicollinearity among shooting efficiency metrics makes it difficult to isolate the precise individual importance of each (e.g., TS% vs eFG%). While Random Forest is less sensitive to this than linear regression for prediction, interpreting feature importance still requires caution.
+
+A counter-intuitive result was the positive impact of DRTG (lower is better defensively) on predicted Wins found by both Random Forest/SHAP and the significant OLS coefficient. This warrants further investigation; it could be an artifact of interactions not fully captured, the specific feature subset chosen, or potentially indicate that within this dataset, teams that won more also happened to have slightly higher DRTGs after accounting for other factors, though this contradicts general basketball understanding.
+
+Furthermore, limitations exist in the data, particularly the reliance on name matching for player measurements which could introduce inaccuracies, and the relatively short timeframe (4 seasons) limiting time-series analysis. As always, these models show correlation and predictive importance, not necessarily causation.
+
+5. Conclusion
+
+To maximize wins in the NBA based on our analysis of the 2021-2025 seasons, teams should prioritize high offensive efficiency (strong ORTG), driven primarily by excellent shooting efficiency (high TS%) and minimizing turnovers (low TOV%). While defense (DRTG) is known to be critical, its relationship in our models was complex and warrants further study; however, its statistical significance in the linear model suggests its importance. Interestingly, greater team height showed a slight negative association with both Wins and ORTG in the models, perhaps reflecting trends in playstyle during this period. Overall, a focus on efficient scoring and ball protection appears to be the most statistically supported path to winning based on this dataset and analysis.
