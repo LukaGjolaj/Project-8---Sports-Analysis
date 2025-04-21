@@ -65,7 +65,7 @@ Run the notebooks in **sequence** from the `notebooks/` folder:
 
 1. **`api.ipynb`**  
    - _Purpose:_ Fetch raw team stats & player minutes via `nba_api` (2021–2025)  
-   - _Output:_ CSVs in `data/rawdata/`
+   - _Output:_ CSVs in `data/rawdata/`; `data/cleandata`
 
 2. **`combine_data.ipynb`**  
    - _Purpose:_ Clean raw data, impute missing values, compute weighted metrics  
@@ -77,24 +77,24 @@ Run the notebooks in **sequence** from the `notebooks/` folder:
      - Train Linear Regression models to predict **Wins** and **ORTG**  
      - Evaluate (R², MAE, RMSE)  
      - Generate OLS summaries via `statsmodels`  
-     - Plot diagnostics (Actual vs. Predicted, Residuals)  
+     - Plot diagnostics (Actual vs. Predicted, Residuals)
+     - Compare linear regression and random forest
    - _Input:_ `data/cleandata/`
 
 4. **`random_forest.ipynb`**  
    - _Purpose:_  
      - Train Random Forest regressors for **Wins** & **ORTG**  
-     - Evaluate performance, extract feature importances  
-     - Perform SHAP analysis (global bar plot & beeswarm)  
+     - Evaluate performance, extract feature importances
+     - generate corrleation heatmap
    - _Input:_ `data/cleandata/`  
    - _Output:_ SHAP plots saved to `report/figures/`
 
 5. **`visualizations.ipynb`** 
    - _Purpose:_  
-     - Create final visuals: correlation heatmap, model performance comparison  
+     - Create final visuals
    - _Input:_ Cleaned data + saved metrics from previous steps  
    - _Output:_ Figures for the report
 
-> **Note:** If you have additional notebooks (e.g., `shot_chart.ipynb`), clarify their order or mark them as optional explorations.
 
 ---
 
