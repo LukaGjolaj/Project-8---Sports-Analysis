@@ -89,12 +89,6 @@ Run the notebooks in **sequence** from the `notebooks/` folder:
    - _Input:_ `data/cleandata/`  
    - _Output:_ SHAP plots saved to `report/figures/`
 
-5. **`visualizations.ipynb`** 
-   - _Purpose:_  
-     - Create final visuals
-   - _Input:_ Cleaned data + saved metrics from previous steps  
-   - _Output:_ Figures for the report
-
 
 ---
 
