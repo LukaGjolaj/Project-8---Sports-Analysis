@@ -8,7 +8,7 @@
 
 ## 1. Introduction: The Quest for Winning
 
-The National Basketball Association (NBA) is driven by competition, with teams constantly seeking an edge to maximize victories. Understanding the statistical factors that contribute most significantly to winning is crucial for team building, strategy development, and fan engagement. This project addresses the research question: **What key team performance metrics can an NBA team focus on to maximize their chance to win the most games?** We utilized publicly available data accessed via the `nba_api` Python package, focusing on team-level statistics from the 2021-22 season through the 2024-25 season (covering 4 seasons). Our analysis aims to identify the most impactful statistical drivers of both overall team wins (`Wins`) and offensive efficiency (Offensive Rating - `ORTG`).
+The National Basketball Association (NBA) is driven by competition, with teams constantly seeking an edge to maximize victories. Understanding the statistical factors that contribute most significantly to winning is crucial for team building, strategy development, and fan engagement. This project addresses the research question: **What key team performance metrics can an NBA team focus on to maximize their chance to win the most games?** We utilized publicly available data accessed via the `nba_api` Python package, focusing on team-level statistics from the 2021-22 season through the 2024-25 season (covering 4 seasons). We got our player heights and wingspans from https://craftednba.com/player-traits/length. Our analysis aims to identify the most impactful statistical drivers of both overall team wins (`Wins`) and offensive efficiency (Offensive Rating - `ORTG`).
 
 ## 2. Methods: Modeling Team Performance
 
