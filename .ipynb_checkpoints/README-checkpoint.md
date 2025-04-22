@@ -94,7 +94,6 @@ Run the notebooks in **sequence** from the `notebooks/` folder:
 
 ## 5. Member Contributions
 
-> _Replace the placeholder text below with each member’s actual tasks._
 
 - **Luka Gjolaj**  
   - Led data collection via `nba_api`  
